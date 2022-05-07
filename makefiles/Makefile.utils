@@ -1,0 +1,5 @@
+##
+## UTILS
+## -----
+php-cs-fixer: ## Lance un bash dans un conteneur en tant que root
+	docker exec ${CONTAINER_NAME_PHP} tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
