@@ -12,7 +12,9 @@ WORKDIR /var/www/gdsources
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN curl -sS https://get.symfony.com/cli/installer | bash
-RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
+RUN apt update
+RUN apt install symfony-cli
+
 RUN git config --global user.email "you@example.com" \ 
     && git config --global user.name "Your Name"

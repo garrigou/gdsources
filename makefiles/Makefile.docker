@@ -1,0 +1,21 @@
+##
+## DOCKER
+## ------
+
+docker-start: ## Démarre les conteneurs du projet
+	docker-compose start
+
+docker-stop: ## Arrête les conteneurs du projet
+	docker-compose stop
+
+docker-restart: docker-stop ## Démarre les conteneurs du projet
+	docker-compose start
+
+docker-up: docker-stop ## Lance tous les conteneurs décrits dans docker-compose.yml
+	docker-compose up -d
+
+docker-up-build: docker-stop ## Construit et lance tous les conteneurs décrits dans docker-compose.yml
+	docker-compose up --build -d
+
+docker-bash: ## Lance un bash dans un conteneur en tant que root
+	docker exec -it ${CONTAINER_NAME_PHP} bash

@@ -1,0 +1,7 @@
+##
+## SYMFONY
+## -----------------
+
+#php bin/console doctrine:mapping:import "App\Entity" annotation --path=src/Entity
+#php bin/console make:entity --regenerate App
+#chown -R 1000:1000 src/Entity/

@@ -1,0 +1,3 @@
+CONTAINER_NAME_PHP="gdsources-php"
+DC=docker-compose
+EXEC=(DC) exec
