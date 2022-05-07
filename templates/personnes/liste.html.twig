@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>Liste des personnes</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Nom</th>
+				<th scope="col">Voir</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for personne in personnes %}
+				<tr>
+					<th scope="row">{{ personne.id }}</th>
+					<td>{{ personne }}</td>
+					<td>
+						<a href="{{ path('personne', { 'id': personne.id }) }}">
+							<i class="fa-solid fa-eye"></i>
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

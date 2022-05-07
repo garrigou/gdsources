@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	{{ personne.prenom }}
+	{{ personne.nom }}
+
+	<h1>Sources</h1>
+
+	{% for sourcePersonne in personne.sourcePersonnes %}
+
+		[{{ sourcePersonne.typeRelation}}]
+		{{ sourcePersonne.source }}
+		{{ sourcePersonne.source.date|date("d/m/Y") }}
+
+	{% endfor %}
+
+{% endblock %}
